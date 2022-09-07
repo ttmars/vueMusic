@@ -112,7 +112,8 @@
 		//打开页面时，初始化数据
 		beforeCreate() {
 			uni.request({
-				url:'http://www.youthsweet.com:3800/migu/api?keyword=' + "周杰伦",
+				//url:'http://www.youthsweet.com:3800/migu/api?keyword=' + "周杰伦",
+				url:'http://39.101.203.25:3800/migu/api?keyword=' + "周杰伦",
 				method:'GET',
 				data:{},
 				success: (res) => {
