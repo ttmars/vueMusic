@@ -4,13 +4,13 @@
 		<view class="">
 			<radio-group @change="switch_search">
 				<label>
+					<radio value="netease" /><text>网易云音乐</text>
+				</label>
+				<label>
 					<radio checked="true" value="migu" /><text>咪咕音乐</text>
 				</label>
 				<label>
-					<radio value="qq" /><text>QQ音乐</text>
-				</label>
-				<label>
-					<radio value="netease" /><text>网易云音乐</text>
+					<radio value="cloud" /><text>云盘</text>
 				</label>
 			</radio-group>
 		</view>
@@ -112,8 +112,8 @@
 		//打开页面时，初始化数据
 		beforeCreate() {
 			uni.request({
-				//url:'http://www.youthsweet.com:3800/migu/api?keyword=' + "周杰伦",
-				url:'http://39.101.203.25:3800/migu/api?keyword=' + "周杰伦",
+				url:'http://www.youthsweet.com:3800/migu/api?keyword=' + "周杰伦",
+				//url:'http://39.101.203.25:3800/migu/api?keyword=' + "周杰伦",
 				method:'GET',
 				data:{},
 				success: (res) => {
