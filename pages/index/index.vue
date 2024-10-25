@@ -4,10 +4,10 @@
 		<view class="">
 			<radio-group @change="switch_search">
 				<label>
-					<radio value="netease" /><text>网易云音乐</text>
+					<radio checked="true" value="netease" /><text>网易云音乐</text>
 				</label>
 				<label>
-					<radio checked="true" value="migu" /><text>咪咕音乐</text>
+					<radio value="migu" /><text>咪咕音乐</text>
 				</label>
 				<label>
 					<radio value="cloud" /><text>云盘</text>
@@ -42,9 +42,9 @@
 		data() {
 			return {
 				dataList: [],			//播放列表
-				audio: ['http://www.youthsweet.com/file/危险派对.mp3'],
+				audio: ['http://39.101.203.25/file/危险派对.mp3'],
 				now: 0,					//默认播放歌曲
-				search_type: "migu",	//默认搜索类型:migu
+				search_type: "netease",	//默认搜索类型:migu
 			}
 		},
 		
@@ -79,7 +79,7 @@
 			//搜索子组件返回歌曲，进行页面渲染
 			flush_data(r){
 				uni.request({
-					url:'http://www.youthsweet.com:3800/' + this.search_type + '/api?keyword=' + r,
+					url:'http://39.101.203.25:3800/' + this.search_type + '/api?keyword=' + r,
 					method:'GET',
 					data:{},
 					success: (res) => {
@@ -98,7 +98,7 @@
 			//飙升榜...
 			get_list(s){
 				uni.request({
-					url:'http://www.youthsweet.com:3800/netease/api?keyword=' + s,
+					url:'http://39.101.203.25:3800/netease/api?keyword=' + s,
 					method:'GET',
 					data:{},
 					success: (res) => {
@@ -112,7 +112,7 @@
 		//打开页面时，初始化数据
 		beforeCreate() {
 			uni.request({
-				url:'http://www.youthsweet.com:3800/migu/api?keyword=' + "周杰伦",
+				url:'http://39.101.203.25:3800/netease/api?keyword=' + "纯音乐",
 				//url:'http://39.101.203.25:3800/migu/api?keyword=' + "周杰伦",
 				method:'GET',
 				data:{},
